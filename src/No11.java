@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class No11 {
@@ -11,6 +10,7 @@ public class No11 {
     }
 
     public static String solution(String input, char target) {
+        StringBuilder stringBuilder = new StringBuilder();
         char[] inputs = input.toCharArray();
         int[] result = new int[inputs.length];
         int count = 1000;
@@ -20,11 +20,16 @@ public class No11 {
             count ++;
         }
 
+        count = 1000;
         for (int j = input.length() -1; j > -1 ; j--) {
             if(inputs[j] == target) count = 0;
-            result[j] = count;
+            if(count < result[j])result[j] = count;
             count ++;
         }
-        return Arrays.toString(result);
+
+        for (int tmp : result) {
+            stringBuilder.append(tmp).append(" ");
+        }
+        return stringBuilder.toString();
     }
 }
