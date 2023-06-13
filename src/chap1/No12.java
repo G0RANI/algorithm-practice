@@ -1,3 +1,5 @@
+package chap1;
+
 import java.util.Scanner;
 
 public class No12 {
