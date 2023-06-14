@@ -1,9 +1,10 @@
-package chap3;
+package basic.chap3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class No1 {
+public class No2 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -28,14 +29,20 @@ public class No1 {
                                  int bInput,
                                  int[] bTargets) {
         ArrayList<Integer> results = new ArrayList<>();
-        int aPoint = 0,bPoint = 0;
+        Arrays.sort(aTargets);
+        Arrays.sort(bTargets);
+        int aPoint = 0, bPoint = 0;
 
         while(aPoint < aInput && bPoint < bInput) {
-            if(aTargets[aPoint] < bTargets[bPoint]) results.add(aTargets[aPoint++]);
-            else results.add(bTargets[bPoint++]);
+            if(aTargets[aPoint] == bTargets[bPoint]) {
+                results.add(aTargets[aPoint++]);
+                bPoint++;
+            } else if(aTargets[aPoint] < bTargets[bPoint]){
+                aPoint++;
+            } else {
+                bPoint++;
+            }
         }
-        while (aPoint < aInput) results.add(aTargets[aPoint++]);
-        while (bPoint < bInput) results.add(bTargets[bPoint++]);
 
         return results;
     }
