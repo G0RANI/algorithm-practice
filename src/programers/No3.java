@@ -1,6 +1,7 @@
 package programers;
 
 public class No3 {
+    // https://school.programmers.co.kr/learn/courses/30/lessons/172928
     public int[] solution(String[] park, String[] routes) {
         boolean[][] parkArea = new boolean[park.length][park[0].length()];
         int[] startPoint = new int[2];

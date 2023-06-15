@@ -3,6 +3,7 @@ package programers;
 import java.util.HashMap;
 
 public class No1 {
+    // https://school.programmers.co.kr/learn/courses/30/lessons/176963
     public int[] solution(String[] name, int[] yearning, String[][] photo) {
         int[] answer = new int[photo.length];
         HashMap<String, Integer> memoryScore = new HashMap<>();
